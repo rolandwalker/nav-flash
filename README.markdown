@@ -4,7 +4,6 @@ Briefly highlight the current line in Emacs.
 
 nav-flash
 ---------
-
 Nav-flash temporarily highlights the line containing the point,
 which is sometimes useful after a navigation command.
 
@@ -16,14 +15,12 @@ hook causes the nav-flash to appear after navigating via imenu:
 	(add-hook 'imenu-after-jump-hook 'nav-flash-show nil t)
 
 See Also
----------
-
-	M-x customize-group RET nav-flash RET
-	M-x customize-group RET pulse RET
+--------
+M-x customize-group RET nav-flash RET
+M-x customize-group RET pulse RET
 
 Notes
----------
-
+-----
 This library reuses an overlay defined in compile.el, but should
 not affect the normal use of compile.el / next-error.
 
