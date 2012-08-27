@@ -37,3 +37,9 @@ When using an overlay and timer for cleanup (as nav-flash does
 by default) the flash and message appear simultaneously.
 
 Nav-flash.el is also simpler than pulse.el.
+
+Compatibility and Requirements
+------------------------------
+Tested only on GNU Emacs version 24.1
+
+No external dependencies

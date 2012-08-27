@@ -52,9 +52,11 @@
 ;;
 ;;    Nav-flash.el is also simpler than pulse.el.
 ;;
-;; Compatibility
+;; Compatibility and Requirements
 ;;
 ;;    Tested only on GNU Emacs version 24.1
+;;
+;;    No external dependencies
 ;;
 ;; Bugs
 ;;
