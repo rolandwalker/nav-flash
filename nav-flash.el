@@ -7,7 +7,7 @@
 ;; Version: 1.0.1
 ;; Last-Updated: 27 Aug 2012
 ;; EmacsWiki: NavFlash
-;; Keywords: navigation
+;; Keywords: extensions, navigation, interface
 ;;
 ;; Simplified BSD License
 ;;
