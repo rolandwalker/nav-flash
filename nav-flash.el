@@ -3,7 +3,8 @@
 ;; Copyright (c) 2012 Roland Walker
 ;;
 ;; Author: Roland Walker walker@pobox.com
-;; URL: https://github.com/rolandwalker/nav-flash.el
+;; Homepage: http://github.com/rolandwalker/nav-flash
+;; URL: http://raw.github.com/rolandwalker/nav-flash/master/nav-flash.el
 ;; Version: 1.0.1
 ;; Last-Updated: 27 Aug 2012
 ;; EmacsWiki: NavFlash
