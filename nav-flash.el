@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (c) 2012 Roland Walker
 ;;
-;; Author: Roland Walker walker@pobox.com
+;; Author: Roland Walker <walker@pobox.com>
 ;; Homepage: http://github.com/rolandwalker/nav-flash
 ;; URL: http://raw.github.com/rolandwalker/nav-flash/master/nav-flash.el
 ;; Version: 1.0.1
