@@ -123,6 +123,7 @@
   :version "1.0.1"
   :link '(emacs-commentary-link "nav-flash")
   :prefix "nav-flash-"
+  :group 'navigation
   :group 'extensions)
 
 (defcustom nav-flash-use-pulse nil
