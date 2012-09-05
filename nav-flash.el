@@ -14,6 +14,13 @@
 ;;
 ;;; Commentary:
 ;;
+;; Quickstart
+;;
+;;     (require 'nav-flash)
+;;     (nav-flash-show)
+;;
+;; Explanation
+;;
 ;; Nav-flash temporarily highlights the line containing the point,
 ;; which is sometimes useful after a navigation command.
 ;;
@@ -23,9 +30,9 @@
 ;;    (require 'nav-flash)
 ;;
 ;; There is no user-level interface for this library; it is only used
-;; by other Lisp libraries.  However you might find it useful to call
+;; by other Lisp libraries.  However, you might find it useful to call
 ;; `nav-flash-show' in your ~/.emacs file.  For example, the following
-;; hook causes the nav-flash to appear after navigating via imenu:
+;; hook causes a flash to appear after navigating via imenu:
 ;;
 ;;    (add-hook 'imenu-after-jump-hook 'nav-flash-show nil t)
 ;;
@@ -36,12 +43,12 @@
 ;;
 ;; Notes
 ;;
-;;    This library reuses an overlay defined in compile.el, but should
-;;    not affect the normal use of compile.el / next-error.
+;;    This library reuses a timer and overlay defined in compile.el,
+;;    but should not affect the normal use of compile.el / `next-error'.
 ;;
 ;;    Pulse.el provides similar functionality and is included with
 ;;    Emacs.  This library can use pulse.el, but does not do so by
-;;    default, because pulse.el uses sit-for, breaking this type
+;;    default, because pulse.el uses `sit-for', breaking this type
 ;;    of construction:
 ;;
 ;;       (nav-flash-show)
