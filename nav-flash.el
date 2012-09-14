@@ -115,8 +115,7 @@
 ;;; requires
 
 ;; for callf
-(eval-when-compile
-  (require 'cl))
+(require 'cl)
 
 ;; may use pulse.el if available
 (require 'pulse nil t)
@@ -221,6 +220,7 @@ this function a no-op."
 ;; mangle-whitespace: t
 ;; require-final-newline: t
 ;; coding: utf-8
+;; byte-compile-warnings: (not cl-functions)
 ;; End:
 ;;
 ;; LocalWords:  NavFlash imenu callf
