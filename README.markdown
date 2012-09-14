@@ -1,11 +1,13 @@
 Overview
 ========
+
 Briefly highlight the current line in Emacs.
 
 Quickstart
 ----------
 
 	(require 'nav-flash)
+
 	(nav-flash-show)
 
 nav-flash
@@ -49,6 +51,7 @@ Nav-flash.el is also simpler than pulse.el.
 
 Compatibility and Requirements
 ------------------------------
+
 Tested on GNU Emacs versions 23.3 and 24.1
 
 No external dependencies
