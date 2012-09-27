@@ -156,6 +156,14 @@ Setting this to nil or 0 will turn off the indicator."
 
 ;;; utility functions
 
+(defun nav-flash-use-pulse-p ()
+  "Return t if pulse.el should be used."
+  (and (fboundp 'pulse-available-p)
+       (pulse-available-p)
+       (or (eq nav-flash-use-pulse t)
+           (and (eq nav-flash-use-pulse 'gui-only)
+                (display-graphic-p)))))
+
 ;;;###autoload
 (defun nav-flash-show (&optional pos end-pos face delay)
   "Flash a temporary highlight to help the user find something.
