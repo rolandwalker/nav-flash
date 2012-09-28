@@ -211,14 +211,6 @@ this function a no-op."
        (setq next-error-highlight-timer
              (run-at-time delay nil 'compilation-goto-locus-delete-o)))))
 
-(defun nav-flash-use-pulse-p ()
-  "Return t if pulse.el should be used."
-  (and (fboundp 'pulse-available-p)
-       (pulse-available-p)
-       (or (eq nav-flash-use-pulse t)
-           (and (eq nav-flash-use-pulse 'gui-only)
-                (display-graphic-p)))))
-
 (provide 'nav-flash)
 
 ;;
