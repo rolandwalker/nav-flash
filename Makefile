@@ -27,6 +27,9 @@ TEST_DIR=ert-tests
 TEST_DEP_1=ert
 TEST_DEP_1_STABLE_URL=http://bzr.savannah.gnu.org/lh/emacs/emacs-24/download/head:/ert.el-20110112160650-056hnl9qhpjvjicy-2/ert.el
 TEST_DEP_1_LATEST_URL=https://raw.github.com/emacsmirror/emacs/master/lisp/emacs-lisp/ert.el
+TEST_DEP_2=pulse
+TEST_DEP_2_STABLE_URL=http://bzr.savannah.gnu.org/lh/emacs/emacs-24/download/head:/pulse.el-20091113204419-o5vbwnq5f7feedwu-10981/pulse.el
+TEST_DEP_2_LATEST_URL=https://raw.github.com/emacsmirror/emacs/master/lisp/cedet/pulse.el
 
 .PHONY : build downloads downloads-latest autoloads test-autoloads test-travis \
          test test-prep test-batch test-interactive clean edit test-dep-1      \
@@ -44,11 +47,23 @@ test-dep-1 :
 	$(EMACS) $(EMACS_BATCH)  -L . -L .. -l $(TEST_DEP_1) || \
 	(echo "Can't load test dependency $(TEST_DEP_1).el, run 'make downloads' to fetch it" ; exit 1)
 
+test-dep-2 :
+	@cd $(TEST_DIR)                                   && \
+	$(EMACS) $(EMACS_BATCH)  -L . -L .. --eval           \
+	    "(progn                                          \
+	      (setq package-load-list '(($(TEST_DEP_2) t)))  \
+	      (when (fboundp 'package-initialize)            \
+	       (package-initialize))                         \
+	      (require '$(TEST_DEP_2)))"                  || \
+	(echo "Can't load test dependency $(TEST_DEP_2).el, run 'make downloads' to fetch it" ; exit 1)
+
 downloads :
 	$(CURL) '$(TEST_DEP_1_STABLE_URL)' > $(TEST_DIR)/$(TEST_DEP_1).el
+	$(CURL) '$(TEST_DEP_2_STABLE_URL)' > $(TEST_DIR)/$(TEST_DEP_2).el
 
 downloads-latest :
 	$(CURL) '$(TEST_DEP_1_LATEST_URL)' > $(TEST_DIR)/$(TEST_DEP_1).el
+	$(CURL) '$(TEST_DEP_2_LATEST_URL)' > $(TEST_DIR)/$(TEST_DEP_2).el
 
 autoloads :
 	$(EMACS) $(EMACS_BATCH) --eval                       \
@@ -63,7 +78,7 @@ test-autoloads : autoloads
 test-travis :
 	@if test -z "$$TRAVIS" && test -e $(TRAVIS_FILE); then travis-lint $(TRAVIS_FILE); fi
 
-test-prep : build test-dep-1 test-autoloads test-travis
+test-prep : build test-dep-1 test-dep-2 test-autoloads test-travis
 
 test-batch :
 	@cd $(TEST_DIR)                                   && \
@@ -101,7 +116,7 @@ test-interactive : test-prep
 test : test-prep test-batch
 
 clean :
-	@rm -f $(AUTOLOADS_FILE) *.elc *~ */*.elc */*~ $(TEST_DIR)/$(TEST_DEP_1).el
+	@rm -f $(AUTOLOADS_FILE) *.elc *~ */*.elc */*~ $(TEST_DIR)/$(TEST_DEP_1).el $(TEST_DIR)/$(TEST_DEP_2).el
 
 edit :
 	@$(EDITOR) `git ls-files`
