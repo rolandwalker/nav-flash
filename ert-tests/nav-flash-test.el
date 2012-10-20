@@ -45,13 +45,24 @@
   (should
    (let ((cursor-in-echo-area t)
          (nav-flash-use-pulse nil))
-     (read-char "Press a key to generate a nav-flash on lines 2 through 3.")
+     (read-char "Press a key to generate a nav-flash on just the character \"5\".")
      (pop-to-buffer "*scratch*")
      (goto-char (point-min))
-     (nav-flash-show 3 7)
+     (nav-flash-show 9 9)
      (y-or-n-p "Did that work as expected?"))))
 
 (ert-deftest nav-flash-show-04 nil
+  :tags '(:interactive)
+  (should
+   (let ((cursor-in-echo-area t)
+         (nav-flash-use-pulse nil))
+     (read-char "Press a key to generate a nav-flash on lines 2 through 3.")
+     (pop-to-buffer "*scratch*")
+     (goto-char (point-min))
+     (nav-flash-show 3 6)
+     (y-or-n-p "Did that work as expected?"))))
+
+(ert-deftest nav-flash-show-05 nil
   :tags '(:interactive)
   (should
    (let ((cursor-in-echo-area t)
@@ -63,7 +74,7 @@
      (nav-flash-show nil nil 'font-lock-warning-face)
      (y-or-n-p "Did that work as expected?"))))
 
-(ert-deftest nav-flash-show-05 nil
+(ert-deftest nav-flash-show-06 nil
   :tags '(:interactive)
   (should
    (let ((cursor-in-echo-area t)
@@ -75,7 +86,7 @@
      (nav-flash-show nil nil nil 2)
      (y-or-n-p "Did that work as expected?"))))
 
-(ert-deftest nav-flash-show-06 nil
+(ert-deftest nav-flash-show-07 nil
   :tags '(:interactive)
   (should
    (let ((cursor-in-echo-area t)
