@@ -173,9 +173,11 @@ Setting this to nil or 0 will turn off the indicator."
 
 POS is optional, and defaults to the current point.
 
-If optional END-POS is set, flash the characters between
-the two points, inclusive, otherwise flash the entire line
-in which POS is found.
+If optional END-POS is set, flash the characters between the two
+points, otherwise flash the entire line in which POS is found.
+
+The flash is normally not inclusive of END-POS.  However, when
+POS is equal to END-POS, the single character at POS will flash.
 
 Optional FACE defaults to `nav-flash-face'.  Optional DELAY
 defaults to `nav-flash-delay' seconds.  Setting DELAY to 0 makes
@@ -185,7 +187,9 @@ this function a no-op."
     (save-excursion
       (goto-char pos)
       (setq pos (line-beginning-position))
-      (setq end-pos (line-end-position))))
+      (setq end-pos (1+ (line-end-position)))))
+  (when (eq pos end-pos)
+    (incf end-pos))
   (callf or delay nav-flash-delay)
   (callf or face 'nav-flash-face)
   (when (and (numberp delay)
@@ -201,7 +205,7 @@ this function a no-op."
                  (pulse-delay .01))
              (when (<= pulse-iterations 0)
                (setq pulse-iterations 1))
-             (pulse-momentary-highlight-region pos (1+ end-pos) 'nav-flash-pulse-face)))
+             (pulse-momentary-highlight-region pos end-pos 'nav-flash-pulse-face)))
        ;; else
        (when (timerp next-error-highlight-timer)
          (cancel-timer next-error-highlight-timer))
@@ -209,7 +213,7 @@ this function a no-op."
                                                (make-overlay (point-min) (point-min))))
        (overlay-put compilation-highlight-overlay 'face face)
        (overlay-put compilation-highlight-overlay 'priority 10000)
-       (move-overlay compilation-highlight-overlay pos (1+ end-pos))
+       (move-overlay compilation-highlight-overlay pos end-pos)
        (add-hook 'pre-command-hook 'compilation-goto-locus-delete-o)
        (setq next-error-highlight-timer
              (run-at-time delay nil 'compilation-goto-locus-delete-o)))))

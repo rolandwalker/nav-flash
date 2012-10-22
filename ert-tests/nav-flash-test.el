@@ -59,7 +59,7 @@
      (read-char "Press a key to generate a nav-flash on lines 2 through 3.")
      (pop-to-buffer "*scratch*")
      (goto-char (point-min))
-     (nav-flash-show 3 6)
+     (nav-flash-show 3 7)
      (y-or-n-p "Did that work as expected?"))))
 
 (ert-deftest nav-flash-show-05 nil
