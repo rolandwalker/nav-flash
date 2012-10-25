@@ -23,7 +23,8 @@
 ;; Explanation
 ;;
 ;; Nav-flash temporarily highlights the line containing the point,
-;; which is sometimes useful after a navigation command.
+;; which is sometimes useful for orientation after a navigation
+;; command.
 ;;
 ;; To use nav-flash, place the nav-flash.el library somewhere Emacs
 ;; can find it, and add the following to your ~/.emacs file:

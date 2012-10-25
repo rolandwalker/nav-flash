@@ -14,11 +14,11 @@ Quickstart
 (nav-flash-show)
 ```
 
-nav-flash
----------
+Explanation
+-----------
 
 Nav-flash temporarily highlights the line containing the point,
-which is sometimes useful after a navigation command.
+which is sometimes useful for orientation after a navigation command.
 
 There is no user-level interface for this library; it is only used
 by other Lisp libraries.  However, you might find it useful to call
