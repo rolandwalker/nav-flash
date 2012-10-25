@@ -186,9 +186,12 @@ this function a no-op."
   (callf or pos (point))
   (unless end-pos
     (save-excursion
-      (goto-char pos)
-      (setq pos (line-beginning-position))
-      (setq end-pos (1+ (line-end-position)))))
+      (let ((inhibit-point-motion-hooks t))
+        (goto-char pos)
+        (beginning-of-visual-line)
+        (setq pos (point))
+        (end-of-visual-line)
+        (setq end-pos (1+ (point))))))
   (when (eq pos end-pos)
     (incf end-pos))
   (callf or delay nav-flash-delay)
