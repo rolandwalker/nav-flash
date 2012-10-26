@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/rolandwalker/nav-flash.png)](http://travis-ci.org/rolandwalker/nav-flash)
+[![Build Status](https://secure.travis-ci.org/rolandwalker/nav-flash.png?branch=master)](http://travis-ci.org/rolandwalker/nav-flash)
 
 Overview
 ========
