@@ -132,7 +132,9 @@
 (defgroup nav-flash nil
   "Briefly highlight the current line."
   :version "1.0.8"
-  :link '(emacs-commentary-link "nav-flash")
+  :link '(emacs-commentary-link :tag "Commentary" "nav-flash")
+  :link '(url-link :tag "Github" "http://github.com/rolandwalker/nav-flash")
+  :link '(url-link :tag "EmacsWiki" "http://emacswiki.org/emacs/NavFlash")
   :prefix "nav-flash-"
   :group 'navigation
   :group 'extensions)
