@@ -2,3 +2,4 @@
 /ert-tests/pulse.el
 
 *-autoloads.el
+*.elc
