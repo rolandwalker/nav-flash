@@ -5,8 +5,8 @@
 ;; Author: Roland Walker <walker@pobox.com>
 ;; Homepage: http://github.com/rolandwalker/nav-flash
 ;; URL: http://raw.github.com/rolandwalker/nav-flash/master/nav-flash.el
-;; Version: 1.0.8
-;; Last-Updated: 25 Oct 2012
+;; Version: 1.1.0
+;; Last-Updated: 25 Oct 2013
 ;; EmacsWiki: NavFlash
 ;; Keywords: extensions, navigation, interface
 ;;
@@ -132,7 +132,7 @@
 ;;;###autoload
 (defgroup nav-flash nil
   "Briefly highlight the current line."
-  :version "1.0.8"
+  :version "1.1.0"
   :link '(emacs-commentary-link :tag "Commentary" "nav-flash")
   :link '(url-link :tag "GitHub" "http://github.com/rolandwalker/nav-flash")
   :link '(url-link :tag "EmacsWiki" "http://emacswiki.org/emacs/NavFlash")
