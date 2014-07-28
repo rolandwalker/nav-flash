@@ -8,7 +8,7 @@ Briefly highlight the current line in Emacs.
 Quickstart
 ----------
 
-```lisp
+```elisp
 (require 'nav-flash)
  
 (nav-flash-show)
@@ -25,7 +25,7 @@ by other Lisp libraries.  However, you might find it useful to call
 `nav-flash-show` in your ~/.emacs file.  For example, the following
 hook causes a flash to appear after navigating via imenu:
 
-```lisp
+```elisp
 (add-hook 'imenu-after-jump-hook 'nav-flash-show nil t)
 ```
 
@@ -46,7 +46,7 @@ Emacs.  This library can use pulse.el, but does not do so by
 default, because pulse.el uses `sit-for`, breaking this type
 of construction:
 
-```lisp
+```elisp
 (nav-flash-show)
 (with-temp-message "message here"
    (sit-for 2))
