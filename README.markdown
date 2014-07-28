@@ -1,12 +1,10 @@
 [![Build Status](https://secure.travis-ci.org/rolandwalker/nav-flash.png?branch=master)](http://travis-ci.org/rolandwalker/nav-flash)
 
-Overview
-========
+# Overview
 
 Briefly highlight the current line in Emacs.
 
-Quickstart
-----------
+## Quickstart
 
 ```elisp
 (require 'nav-flash)
@@ -14,8 +12,7 @@ Quickstart
 (nav-flash-show)
 ```
 
-Explanation
------------
+## Explanation
 
 Nav-flash temporarily highlights the line containing the point,
 which is sometimes useful for orientation after a navigation command.
@@ -29,14 +26,12 @@ hook causes a flash to appear after navigating via imenu:
 (add-hook 'imenu-after-jump-hook 'nav-flash-show nil t)
 ```
 
-See Also
---------
+## See Also
 
 	M-x customize-group RET nav-flash RET
 	M-x customize-group RET pulse RET
 
-Notes
------
+## Notes
 
 This library reuses an overlay defined in compile.el, but should
 not affect the normal use of compile.el / next-error.
@@ -57,8 +52,7 @@ by default) the flash and message appear simultaneously.
 
 Nav-flash.el is also simpler than pulse.el.
 
-Compatibility and Requirements
-------------------------------
+## Compatibility and Requirements
 
 	GNU Emacs version 24.4-devel     : yes, at the time of writing
 	GNU Emacs version 24.3           : yes
