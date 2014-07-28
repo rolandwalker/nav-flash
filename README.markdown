@@ -28,8 +28,8 @@ hook causes a flash to appear after navigating via imenu:
 
 ## See Also
 
-<kbd>M-x</kbd> <kbd>customize-group</kbd> <kbd>RET</kbd> <kbd>nav-flash</kbd> <kbd>RET</kbd>
-<kbd>M-x</kbd> <kbd>customize-group</kbd> <kbd>RET</kbd> <kbd>pulse</kbd> <kbd>RET</kbd>
+* <kbd>M-x</kbd> <kbd>customize-group</kbd> <kbd>RET</kbd> <kbd>nav-flash</kbd> <kbd>RET</kbd>
+* <kbd>M-x</kbd> <kbd>customize-group</kbd> <kbd>RET</kbd> <kbd>pulse</kbd> <kbd>RET</kbd>
 
 ## Notes
 
