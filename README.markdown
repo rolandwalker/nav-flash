@@ -33,13 +33,13 @@ hook causes a flash to appear after navigating via imenu:
 
 ## Notes
 
-This library reuses an overlay defined in compile.el, but should
-not affect the normal use of compile.el / next-error.
+This library reuses an overlay defined in `compile.el`, but should
+not affect the normal use of `compile.el` / `next-error`.
 
-Pulse.el provides similar functionality and is included with
-Emacs.  This library can use pulse.el, but does not do so by
-default, because pulse.el uses `sit-for`, breaking this type
-of construction:
+`pulse.el` provides similar functionality and is included with
+Emacs.  This library can use `pulse.el`, but does not do so by
+default, because `pulse.el` uses `sit-for`, breaking this type
+of construct:
 
 ```elisp
 (nav-flash-show)
@@ -50,7 +50,7 @@ of construction:
 When using an overlay and timer for cleanup (as nav-flash does
 by default) the flash and message appear simultaneously.
 
-Nav-flash.el is also simpler than pulse.el.
+`nav-flash.el` is also simpler than `pulse.el`.
 
 ## Compatibility and Requirements
 
