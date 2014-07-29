@@ -19,7 +19,7 @@ which is sometimes useful for orientation after a navigation command.
 
 There is no user-level interface for this library; it is only used
 by other Lisp libraries.  However, you might find it useful to call
-`nav-flash-show` in your ~/.emacs file.  For example, the following
+`nav-flash-show` in your `~/.emacs` file.  For example, the following
 hook causes a flash to appear after navigating via imenu:
 
 ```elisp
