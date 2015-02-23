@@ -1,6 +1,6 @@
 ;;; nav-flash.el --- Briefly highlight the current line
 ;;
-;; Copyright (c) 2012-13 Roland Walker
+;; Copyright (c) 2012-2015 Roland Walker
 ;;
 ;; Author: Roland Walker <walker@pobox.com>
 ;; Homepage: http://github.com/rolandwalker/nav-flash
