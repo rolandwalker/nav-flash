@@ -120,8 +120,8 @@
 
 ;;; requirements
 
-;; for callf
-(require 'cl)
+;; for cl-callf
+(require 'cl-lib)
 
 ;; may use pulse.el if available
 (require 'pulse nil t)
@@ -186,7 +186,7 @@ POS is equal to END-POS, the single character at POS will flash.
 Optional FACE defaults to `nav-flash-face'.  Optional DELAY
 defaults to `nav-flash-delay' seconds.  Setting DELAY to 0 makes
 this function a no-op."
-  (callf or pos (point))
+  (cl-callf or pos (point))
   (unless end-pos
     (save-excursion
       (let ((inhibit-point-motion-hooks t))
@@ -197,8 +197,8 @@ this function a no-op."
         (setq end-pos (1+ (point))))))
   (when (eq pos end-pos)
     (incf end-pos))
-  (callf or delay nav-flash-delay)
-  (callf or face 'nav-flash-face)
+  (cl-callf or delay nav-flash-delay)
+  (cl-callf or face 'nav-flash-face)
   (when (and (numberp delay)
              (> delay 0))
     (if (nav-flash-use-pulse-p)
@@ -238,7 +238,7 @@ this function a no-op."
 ;; byte-compile-warnings: (not cl-functions redefine)
 ;; End:
 ;;
-;; LocalWords:  NavFlash imenu callf
+;; LocalWords:  NavFlash imenu cl-callf
 ;;
 
 ;;; nav-flash.el ends here
