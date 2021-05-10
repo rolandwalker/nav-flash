@@ -196,7 +196,7 @@ this function a no-op."
         (end-of-visual-line)
         (setq end-pos (1+ (point))))))
   (when (eq pos end-pos)
-    (incf end-pos))
+    (cl-incf end-pos))
   (cl-callf or delay nav-flash-delay)
   (cl-callf or face 'nav-flash-face)
   (when (and (numberp delay)
