@@ -157,7 +157,7 @@ Setting this to nil or 0 will turn off the indicator."
 
 ;; note nav-flash-face is customizable, but nav-flash-pulse-face is not
 (defface nav-flash-face
-  '((t (:inherit highlight)))
+  '((t (:inherit highlight :extend t)))
   "Face to flash the current line."
   :group 'nav-flash)
 
