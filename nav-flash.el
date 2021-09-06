@@ -191,7 +191,9 @@ this function a no-op."
   (cl-callf or pos (point))
   (unless end-pos
     (save-excursion
-      (let ((inhibit-point-motion-hooks t))
+      (let ((inhibit-point-motion-hooks t)
+            (cursor-intangible-mode nil)
+            (cursor-sensor-mode nil))
         (goto-char pos)
         (beginning-of-visual-line)
         (setq pos (point))
