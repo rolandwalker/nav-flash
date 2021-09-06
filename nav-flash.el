@@ -1,12 +1,12 @@
 ;;; nav-flash.el --- Briefly highlight the current line
 ;;
-;; Copyright (c) 2012-2015 Roland Walker
+;; Copyright (c) 2012-2021 Roland Walker
 ;;
 ;; Author: Roland Walker <walker@pobox.com>
 ;; Homepage: http://github.com/rolandwalker/nav-flash
 ;; URL: http://raw.githubusercontent.com/rolandwalker/nav-flash/master/nav-flash.el
-;; Version: 1.1.0
-;; Last-Updated: 25 Oct 2013
+;; Version: 1.1.2
+;; Last-Updated:  6 Sep 2021
 ;; EmacsWiki: NavFlash
 ;; Keywords: extensions, navigation, interface
 ;;
@@ -134,7 +134,7 @@
 ;;;###autoload
 (defgroup nav-flash nil
   "Briefly highlight the current line."
-  :version "1.1.0"
+  :version "1.1.2"
   :link '(emacs-commentary-link :tag "Commentary" "nav-flash")
   :link '(url-link :tag "GitHub" "http://github.com/rolandwalker/nav-flash")
   :link '(url-link :tag "EmacsWiki" "http://emacswiki.org/emacs/NavFlash")
