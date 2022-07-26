@@ -5,6 +5,7 @@
 ;; Author: Roland Walker <walker@pobox.com>
 ;; Homepage: http://github.com/rolandwalker/nav-flash
 ;; URL: http://raw.githubusercontent.com/rolandwalker/nav-flash/master/nav-flash.el
+;; Package-Requires: ((emacs "25.1"))
 ;; Version: 1.1.2
 ;; Last-Updated:  6 Sep 2021
 ;; EmacsWiki: NavFlash
